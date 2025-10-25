@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pulso Urbano — Café y Bar Musical</title>
+  <meta name="description" content="Pulso Urbano: café y bar musical. Eventos, carta, reserva y ambiente urbano." />
+
+  <!-- Fuentes y hoja de estilo -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <!-- Logo SVG -->
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Logo Pulso Urbano">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#ff8a5b" />
+                <stop offset="1" stop-color="#ff6b35" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" rx="18" fill="#0d0d0e" />
+            <g transform="translate(12,12) scale(0.76)">
+              <path d="M8 44 C20 10, 60 10, 72 44" fill="none" stroke="url(#g1)" stroke-width="6" stroke-linecap="round" />
+              <circle cx="74" cy="28" r="6" fill="url(#g1)" />
+              <rect x="70" y="16" width="8" height="24" rx="2" fill="url(#g1)" transform="rotate(-12 74 28)" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <h1>Pulso Urbano</h1>
+          <p>Café · Bar musical</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#carta">Carta</a></li>
+          <li><a href="#eventos">Eventos</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="hero-card">
+        <div class="kicker">Ambiente nocturno & elegante</div>
+        <h2>Donde la ciudad late al ritmo del café y la música.</h2>
+        <p class="muted">
+          Pulso Urbano es un espacio para amantes del buen café, cócteles artesanales y noches con música en vivo.
+        </p>
+        <div class="cta-row">
+          <button class="btn" onclick="scrollToSection('eventos')">Ver eventos</button>
+          <button class="btn ghost" onclick="scrollToSection('contacto')">Reservar mesa</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carta -->
+    <section id="carta">
+      <h3>Nuestra carta</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Cafés especiales</h4>
+          <ul class="muted">
+            <li>Espresso doble — 5.00</li>
+            <li>Cold brew — 7.00</li>
+            <li>Latte especiado — 6.00</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Cócteles & bebidas</h4>
+          <ul class="muted">
+            <li>Pulso Negroni — 12.00</li>
+            <li>Old Urban — 13.00</li>
+            <li>Mojito de café — 11.00</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Bocados</h4>
+          <ul class="muted">
+            <li>Tostadas artesanas — 8.00</li>
+            <li>Cheesecake urbano — 9.00</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eventos -->
+    <section id="eventos">
+      <h3>Próximos eventos</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Jueves acústicos</h4>
+          <p class="muted">20:00 — Entrada libre</p>
+        </div>
+        <div class="card">
+          <h4>Viernes DJ set</h4>
+          <p class="muted">22:00 — Reserva sugerida</p>
+        </div>
+        <div class="card">
+          <h4>Sábado temático</h4>
+          <p class="muted">Especiales en coctelería</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria">
+      <h3>Galería</h3>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80" alt="Interior del bar">
+        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80" alt="Cocteles">
+        <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?q=80" alt="Música en vivo">
+        <img src="https://images.unsplash.com/photo-1505576391880-5c8f8e5a7b4d?q=80" alt="Café">
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+      <h3>Contacto</h3>
+      <form class="reserve-form" onsubmit="event.preventDefault(); makeReservation();">
+        <input type="text" id="name" placeholder="Tu nombre" required />
+        <input type="date" id="date" required />
+        <input type="time" id="time" required />
+        <select id="people">
+          <option value="1">1 persona</option>
+          <option value="2">2 personas</option>
+          <option value="3">3 personas</option>
+          <option value="4">4 personas</option>
+        </select>
+        <button class="btn" type="submit">Reservar</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="muted">© <span id="year"></span> Pulso Urbano — Todos los derechos reservados</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
